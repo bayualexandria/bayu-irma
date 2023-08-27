@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bayu & Irma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- simplyCountdown -->
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+    <script src="countdown/simplyCountdown.min.js"></script>
+    <link rel="stylesheet" href="dist/css/styles.css" />
+  </head>
+  <body>
+    <audio autoplay src="src/musik/Taylor Swift - Begin Again.mp3"></audio>
+    <div class="hero w-full h-full">
+      <div
+        class="flex flex-col text-white justify-center items-center gap-y-3 py-24"
+      >
+        <h1 class="font-sacramento text-2xl font-bold">Undangan Pernikahan</h1>
+        <!-- <div class="h-32 rounded-full shadow-lg w-32 overflow-hidden">
+          <img src="img/avatar.jpg" alt="image" />
+        </div> -->
+        <div class="flex flex-col calon text-center text-5xl">
+          <h1>Bayu Wardana</h1>
+          <h1>&</h1>
+          <h1>Irma Kusuma Wardani</h1>
+        </div>
+        <h1>Akan melangsungkan resepsi pernikahan dalam</h1>
+        <div class="simply-countdown"></div>
+        <button
+          id="buka"
+          class="text-sm font-bold text-white bg-textPrimary px-2 py-0.5 md:text-base rounded-md shadow-md hover:ring hover:ring-pink-400 hover:bg-white hover:text-textPrimary transition duration-200"
+        >
+          Lihat Undangan
+        </button>
+      </div>
+    </div>
+
+    <div id="content" class="w-full h-full relative hidden">
+      <section id="home" class="flex flex-col h-screen p-10 relative">
+        <div class="absolute top-0 left-0">
+          <img
+            src="img/bingkai1-atas-kiri.png"
+            alt=""
+            class="w-2/3 md:w-full"
+          />
+        </div>
+        <div class="absolute top-0 right-0">
+          <div class="w-full flex items-end justify-end">
+            <img
+              src="img/bingkai1-atas-kanan.png"
+              alt=""
+              class="md:w-full w-2/3"
+            />
+          </div>
+        </div>
+        <div class="absolute bottom-0 right-0">
+          <div class="w-full flex items-end justify-end">
+            <img
+              src="img/bingkai1-bawah-kanan.png"
+              alt=""
+              class="w-2/3 md:w-full"
+            />
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0">
+          <img
+            src="img/bingkai1-bawah-kiri.png"
+            alt=""
+            class="w-2/3 md:w-full"
+          />
+        </div>
+        <div class="text-center flex gap-y-5 flex-col justify-center">
+          <h1
+            class="font-sacramento font-bold text-2xl md:text-4xl text-textPrimary"
+          >
+            Calon Mempelai
+          </h1>
+          <div class="flex flex-col justify-center w-full items-center">
+            <img src="img/bissmilah.png" alt="" class="w-1/2 md:w-1/5" />
+            <p class="text-xs md:text-sm font-medium text-slate-500">
+              Dengan menyebut nama Allah yang maha pengasih lagi maha penyayang
+            </p>
+          </div>
+          <div class="flex flex-col justify-center w-full items-center gap-y-2">
+            <img src="img/yasin.png" alt="" class="w-full md:w-1/2" />
+            <p
+              class="text-xs md:text-sm font-medium text-slate-500 w-full md:w-1/2"
+            >
+              Mahasuci (Allah) yang telah menciptakan semuanya
+              berpasang-pasangan, baik dari apa yang ditumbuhkan oleh bumi dan
+              dari diri mereka sendiri maupun dari apa yang tidak mereka
+              ketahui.
+            </p>
+          </div>
+          <div
+            class="items-center w-full justify-center flex flex-row"
+          >
+            <div
+              class="w-2/5 flex flex-col items-center md:items-end md:justify-end justify-center"
+            >
+              <h1 class="md:text-xl text-base font-bold">
+                Bayu Wardana, S.Kom
+              </h1>
+              <h1 class="md:text-sm text-xs font-normal">Putra Kedua dari</h1>
+              <h1 class="md:text-sm text-xs font-bold">Bapak Wardi</h1>
+              <h1 class="md:text-sm text-xs font-normal">&</h1>
+              <h1 class="md:text-sm text-xs font-bold">Ibu Suratmi</h1>
+            </div>
+            <div class="md:w-1/5 w-1/2 relative">
+              
+              <img src="img/bingkai2-name.png" alt="" class="w-full" />
+            </div>
+            <div
+              class="w-2/5 flex flex-col items-center md:items-start md:justify-start justify-center"
+            >
+              <h1 class="md:text-xl text-base font-bold">
+                Irma Kusuma Wardani, S.A.P.
+              </h1>
+              <h1 class="md:text-sm text-xs font-normal">Putri Kedua dari</h1>
+              <h1 class="md:text-sm text-xs font-bold">Bapak XXXXXX</h1>
+              <h1 class="md:text-sm text-xs font-normal">&</h1>
+              <h1 class="md:text-sm text-xs font-bold">Ibu XXXXX</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="flex flex-col h-screen p-10">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab
+        voluptatibus illum, ea blanditiis aspernatur animi veritatis neque quos
+        corporis labore maxime tempora ratione? Sequi magnam sint eligendi quam
+        nam?
+      </section>
+      <div id="menu" class="hidden fixed bottom-3 w-full">
+        <div class="flex justify-center items-center">
+          <div
+            class="w-2/3 md:w-2/5 bg-pink-200 py-1.5 px-3 rounded-lg shadow-lg gap-x-3 flex flex-row justify-between items-center"
+          >
+            <div class="w-10">
+              <img src="img/icons/weeding.png" class="w-10" />
+            </div>
+            <div class="w-10">
+              <img src="img/icons/cincin.png" class="w-10" />
+            </div>
+            <div class="w-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-8 h-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
+              </svg>
+            </div>
+            <div class="w-10">
+              <img src="img/icons/map.png" class="w-8" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      simplyCountdown(".simply-countdown", {
+        year: 2023, // required
+        month: 8, // required
+        day: 31, // required
+        hours: 12, // Default is 0 [0-23] integer
+        words: {
+          //words displayed into the countdown
+          days: { singular: "hari", plural: "hari" },
+          hours: { singular: "jam", plural: "jam" },
+          minutes: { singular: "menit", plural: "menit" },
+          seconds: { singular: "detik", plural: "detik" },
+        },
+      });
+    </script>
+    <script>
+      const menuPilihan = document.getElementById("menu");
+      const clickButtonUndangan = document.getElementById("buka");
+      const content = document.getElementById("content");
+
+      if (localStorage.getItem("buka") == "buka") {
+        menuPilihan.classList.remove("hidden");
+        clickButtonUndangan.classList.add("hidden");
+        content.classList.remove("hidden");
+      }
+
+      function bukaUndangan() {
+        clickButtonUndangan.addEventListener("click", function () {
+          clickButtonUndangan.innerHTML = "";
+          clickButtonUndangan.innerHTML = `
+          <svg id="reload" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-spin" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+          </svg>`;
+          console.log(reload);
+          setTimeout(() => {
+            localStorage.setItem("buka", "buka");
+            console.log(localStorage.getItem("buka"));
+            menuPilihan.classList.remove("hidden");
+            clickButtonUndangan.classList.add("hidden");
+            content.classList.remove("hidden");
+          }, 10000);
+        });
+      }
+      bukaUndangan();
+    </script>
+  </body>
+</html>
