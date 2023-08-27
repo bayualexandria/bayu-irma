@@ -9,7 +9,7 @@ body{
 }
 .hero::before{
     content: '';
-    background-image: url(../../img/IMG-20230813-WA0006.jpg);
+    background-image: url(../../img/IMG-20230813-WA0001.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,6 +70,7 @@ background-color: rgba(0, 0, 0, 0.5);
 
 /* mobile phone */
 @media (max-width: 576px) {
+
 .hero {
         justify-content: center;
         align-items: center;
