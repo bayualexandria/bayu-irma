@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bayu & Irma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +14,6 @@
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <audio autoplay loop src="src/musik/Elsya Trauma feat Aan Story.mp3"></audio>
     <div class="hero w-full h-full">
       <div
         class="flex flex-col text-white justify-center items-center gap-y-3 py-24"
@@ -98,16 +95,12 @@
               ketahui.
             </p>
           </div>
-          
-          <div
-            class="w-full flex flex-row pt-16"
-          >
+
+          <div class="w-full flex flex-row pt-16">
             <div
               class="w-1/2 flex flex-col items-start md:items-end md:justify-end justify-start text-left"
             >
-              <h1 class="md:text-xl text-xs font-bold">
-                Bayu Wardana, S.Kom
-              </h1>
+              <h1 class="md:text-xl text-xs font-bold">Bayu Wardana, S.Kom</h1>
               <h1 class="md:text-sm text-xs font-normal">Putra Kedua dari</h1>
               <h1 class="md:text-sm text-xs font-bold">Bapak Wardi</h1>
               <h1 class="md:text-sm text-xs font-normal">&</h1>
@@ -127,12 +120,13 @@
               <h1 class="md:text-sm text-xs font-normal">&</h1>
               <h1 class="md:text-sm text-xs font-bold">Ibu XXXXX</h1>
             </div>
-
           </div>
-          <div class="w-full justify-center items-center content-center flex flex-row -mt-16">
+          <div
+            class="w-full justify-center items-center content-center flex flex-row -mt-16"
+          >
             <div class="w-1/2 relative block md:hidden">
-               <img src="img/bingkai2-name.png" alt="" class="w-full" />
-             </div>
+              <img src="img/bingkai2-name.png" alt="" class="w-full" />
+            </div>
           </div>
         </div>
       </section>
@@ -175,9 +169,18 @@
           </div>
         </div>
       </div>
-    </div>
-
+    <!-- </div>
+    <audio controls loop autoplay>
+      <source src="src/musik/trauma.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio> -->
     <script>
+      window.onload=function(){
+        var source = "src/musik/trauma.mp3";
+        var audio = new Audio();
+        audio.src = source;
+        audio.autoplay = true;
+      }
       simplyCountdown(".simply-countdown", {
         year: 2023, // required
         month: 8, // required
