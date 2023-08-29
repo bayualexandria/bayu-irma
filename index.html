@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth transition duration-300">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <div class="hero w-full h-full">
+    <div class="hero w-full h-full text-shadow">
       <div
         class="flex flex-col text-white justify-center items-center gap-y-3 py-24"
       >
@@ -41,7 +41,7 @@
     </div>
 
     <div id="content" class="w-full h-full relative hidden">
-      <section id="home" class="flex flex-col h-screen p-10 relative">
+      <section id="calon-mempelai" class="flex flex-col h-screen p-10 relative">
         <div class="absolute top-0 left-0">
           <img
             src="img/bingkai1-atas-kiri.png"
@@ -102,11 +102,13 @@
             <div
               class="w-1/2 flex flex-col items-start md:items-end md:justify-end justify-start text-left"
             >
-              <h1 class="md:text-xl text-xs font-bold">Bayu Wardana, S.Kom</h1>
+              <h1 class="md:text-xl text-sm font-sacramento text-textPrimary">
+                Bayu Wardana
+              </h1>
               <h1 class="md:text-sm text-xs font-normal">Putra Kedua dari</h1>
-              <h1 class="md:text-sm text-xs font-bold">Bapak Wardi</h1>
+              <h1 class="md:text-sm text-xs">Bapak Wardi</h1>
               <h1 class="md:text-sm text-xs font-normal">&</h1>
-              <h1 class="md:text-sm text-xs font-bold">Ibu Suratmi</h1>
+              <h1 class="md:text-sm text-xs">Ibu Suratmi</h1>
             </div>
             <div class="md:w-1/5 w-1/2 relative hidden md:block">
               <img src="img/bingkai2-name.png" alt="" class="w-full" />
@@ -114,13 +116,13 @@
             <div
               class="w-1/2 flex flex-col items-end text-right md:items-start md:justify-start justify-end"
             >
-              <h1 class="md:text-xl text-xs font-bold">
-                Irma Kusuma Wardani, S.A.P.
+              <h1 class="md:text-xl text-sm font-sacramento text-textPrimary">
+                Irma Kusuma Wardani
               </h1>
               <h1 class="md:text-sm text-xs font-normal">Putri Kedua dari</h1>
-              <h1 class="md:text-sm text-xs font-bold">Bapak XXXXXX</h1>
+              <h1 class="md:text-sm text-xs">Bapak XXXXXX</h1>
               <h1 class="md:text-sm text-xs font-normal">&</h1>
-              <h1 class="md:text-sm text-xs font-bold">Ibu XXXXX</h1>
+              <h1 class="md:text-sm text-xs">Ibu XXXXX</h1>
             </div>
           </div>
           <div
@@ -132,24 +134,32 @@
           </div>
         </div>
       </section>
-      <section class="flex flex-col h-screen p-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab
-        voluptatibus illum, ea blanditiis aspernatur animi veritatis neque quos
-        corporis labore maxime tempora ratione? Sequi magnam sint eligendi quam
-        nam?
+      <section
+        id="informasi-acara"
+        class="flex flex-col h-screen p-10 bg-slate-100 text-center"
+      >
+        <h1
+          class="font-sacramento font-bold text-2xl md:text-4xl text-textPrimary"
+        >
+          Informasi Acara Pernikahan
+        </h1>
       </section>
       <div id="menu" class="hidden fixed bottom-3 w-full">
         <div class="flex justify-center items-center">
           <div
             class="w-2/3 md:w-2/5 bg-pink-200 py-1.5 px-3 rounded-lg shadow-lg gap-x-3 flex flex-row justify-between items-center"
           >
-            <div class="w-10">
+            <a
+              class="w-10 flex flex-col justify-center items-center"
+              href="#calon-mempelai"
+            >
               <img src="img/icons/weeding.png" class="w-10" />
-            </div>
-            <div class="w-10">
-              <img src="img/icons/cincin.png" class="w-10" />
-            </div>
-            <div class="w-10">
+              <!-- <hr class="h-0.5 w-full bg-slate-800 rounded-full" /> -->
+            </a>
+            <a
+              lass="w-10 flex flex-col justify-center items-center"
+              href="#informasi-acara"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -164,6 +174,9 @@
                   d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
                 />
               </svg>
+            </a>
+            <div class="w-10">
+              <img src="img/icons/cincin.png" class="w-10" />
             </div>
             <div class="w-10">
               <img src="img/icons/map.png" class="w-8" />
@@ -189,6 +202,8 @@
       });
     </script>
     <script>
+      const scroll = window.pageYOffset;
+      console.log(scroll);
       const menuPilihan = document.getElementById("menu");
       const clickButtonUndangan = document.getElementById("buka");
       const content = document.getElementById("content");
