@@ -306,7 +306,6 @@
         </p>
         <div class="grid grid-rows-1 md:grid-cols-4 w-full gap-3 pt-5">
           <img src="./img/foto/avatar.jpg" class="w-full" />
-
           <img src="./img/foto/IMG-20220528-WA0019.jpg" alt="" />
 
           <img src="./img/foto/IMG-20221120-WA0005.jpg" alt="" />
@@ -400,10 +399,34 @@
           </div>
         </div>
       </div>
+      <div id="audio-container" class="fixed bottom-0 right-0 hidden">
+        <div class="px-5 flex py-5">
+          <audio id="song" autoplay loop>
+            <source src="src/musik/janji.mp3" type="audio/mp3" />
+          </audio>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            id="icon-song"
+            class="w-8 h-8 animate-spin transition duration-200 text-textPrimary cursor-pointer"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
-    <footer>
-      <audio src="src/musik/janji.mp3" autoplay controls></audio>
-    </footer>
     <script>
       simplyCountdown(".simply-countdown", {
         year: 2024, // required
@@ -425,20 +448,26 @@
       const menuPilihan = document.getElementById("menu");
       const clickButtonUndangan = document.getElementById("buka");
       const content = document.getElementById("content");
+      const audioContainer = document.querySelector("#audio-container");
+      const song = document.querySelector("#song");
+      const iconSong = document.querySelector("#icon-song");
+      let isPlaying = false;
 
       if (localStorage.getItem("buka") == "buka") {
+        playAudio();
         menuPilihan.classList.remove("hidden");
         clickButtonUndangan.classList.add("hidden");
         content.classList.remove("hidden");
+        audioContainer.classList.remove("hidden");
       }
 
       function bukaUndangan() {
         clickButtonUndangan.addEventListener("click", function () {
           clickButtonUndangan.innerHTML = "";
           clickButtonUndangan.innerHTML = `
-          <svg id="reload" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-spin" >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-          </svg>`;
+                <svg id="reload" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-spin" >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                </svg>`;
           console.log(reload);
           setTimeout(() => {
             localStorage.setItem("buka", "buka");
@@ -449,6 +478,46 @@
           }, 10000);
         });
       }
+      // Playing AUdio
+      function playAudio() {
+        song.volume = 0.1;
+        song.play();
+        isPlaying = true;
+      }
+      // Click button play
+      iconSong.onclick = function () {
+        if (isPlaying) {
+          iconSong.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="icon-song" class="w-8 h-8 animate-spin transition duration-200 text-textPrimary cursor-pointer">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      `;
+          song.pause();
+        } else {
+          song.play();
+          iconSong.innerHTML = `<svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            id="icon-song"
+            class="w-8 h-8 animate-spin transition duration-200 text-textPrimary cursor-pointer"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
+            />
+          </svg>`;
+        }
+
+        isPlaying = !isPlaying;
+      };
       bukaUndangan();
     </script>
   </body>
