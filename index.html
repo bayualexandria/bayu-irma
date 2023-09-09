@@ -473,6 +473,8 @@
                 </svg>`;
           console.log(reload);
           setTimeout(() => {
+            playAudio();
+            audioContainer.classList.remove("hidden");
             localStorage.setItem("buka", "buka");
             console.log(localStorage.getItem("buka"));
             menuPilihan.classList.remove("hidden");
